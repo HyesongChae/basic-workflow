@@ -1,5 +1,5 @@
-name: Test Vars context test
-run-name: RUN Vars context test
+name: Test Vars Context Test
+run-name: RUN Vars Context Test
 
 on:
   workflow_dispatch
@@ -7,11 +7,7 @@ on:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
     steps:
       - name: "Say Hello JOB_NAME"
-        run: echo "JOB_NAME : ${{ vars.JOB_NAME }}"
-
-
-          
+        run: |
+          echo "JOB_NAME from vars context: ${{ vars.JOB_NAME }}"
